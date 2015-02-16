@@ -1,0 +1,19 @@
+<!-- <h1>Post#index</h1>
+<p>Find me in app/views/post/index.html.erb</p>
+ -->
+
+<h1>List of All Posts</h1>
+<p>======================</p>
+
+<% @posts.each do |post| %>
+
+       Title: <%= post.title %><br>
+       Description: <%= post.description %><br>
+       <%= link_to 'Show', post, method: :get %>
+       <%= link_to 'Edit', edit_post_path(post) %>
+       <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %><br></br>
+
+    <% end %>
+
+<br></br>
+<%= link_to 'Create New Post', new_post_path %>
